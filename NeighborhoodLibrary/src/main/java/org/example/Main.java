@@ -47,6 +47,45 @@ public class Main {
             }
         }
         }
+    public static void booksIn(Book[] inventory){
+        for(int i = 0; i < inventory.length; i++){
+            Book currentBook = inventory[i];
+            if(currentBook != null && currentBook.isCheckedOut()){
+                System.out.println(currentBook.getTitle());
+            }
+        }
+    }
 
+    public static void booksOut(Book[] inventory){
+        for(int i = 0; i < inventory.length; i++){
+            Book currentBook = inventory[i];
+            if(currentBook != null && (currentBook.isCheckedOut())){
+                System.out.println(currentBook.getTitle());
+            }
+        }
+    }
+
+    public static void bookCheckIn(Book[] inventory, Scanner scanner){
+        System.out.println("Input book you are returning");
+        String bookReturned = scanner.nextLine();
+        boolean checkedIn = false;
+
+        for(int i = 0; i < inventory.length; i++){
+            if(inventory[i] != null && inventory[i].getTitle().equalsIgnoreCase(bookReturned)){
+                if(!inventory[i].isCheckedOut()){
+                    System.out.println("Book already checked in");
+                } else {inventory[i].setCheckedOut(false);
+                    System.out.println("Book has successfully checked in");
+                }
+                checkedIn = true;
+                break;
+            }
+        }
+        if(!checkedIn){
+            System.out.println("Book not in inventory");
+        }
+    }
 
     }
+
+

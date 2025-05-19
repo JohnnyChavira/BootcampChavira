@@ -85,4 +85,17 @@ public class Vehicle {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    //Override toString() to return string representation of vehicle
+    @Override
+    public String toString() {
+        return "VIN: " + vin +
+                ", Year: " + year +
+                ", Make: " + make +
+                ", Model: " + model +
+                ", Type: " + vehicleType +
+                ", Color: " + color +
+                ", Odometer: " + odometer +
+                ", Price: $" + price;
+    }
 }

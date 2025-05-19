@@ -1,13 +1,12 @@
 package org.example;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class DealershipFileManager {
     public static Dealership getDealership() {
 
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("src/main/resources/inventory.csv"))) {
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader("inventory.csv"))) {
             String dealershipLine = bufferedReader.readLine();
             String[] dealershipData = dealershipLine.split("\\|");
 
@@ -44,6 +43,26 @@ public class DealershipFileManager {
             ex.printStackTrace();
             return null;
 
+        }
+    }
+    // This method saves the dealership data (vehicles and dealership info)
+    public static void saveDealership(Dealership dealership) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("inventory.csv"))) {
+            // Save dealership info (first line)
+            writer.write(dealership.getName() + "|" + dealership.getAddress() + "|" + dealership.getPhone());
+            writer.newLine();
+
+            // Save each vehicle
+            for (Vehicle v : dealership.getAllVehicles()) {
+                String line = v.getVin() + "|" + v.getYear() + "|" + v.getMake() + "|" + v.getModel() + "|"
+                        + v.getVehicleType() + "|" + v.getColor() + "|" + v.getOdometer() + "|" + v.getPrice();
+                writer.write(line);
+                writer.newLine();
+            }
+
+        } catch (IOException e) {
+            System.out.println("Error saving dealership file.");
+            e.printStackTrace();
         }
     }
 }

@@ -1,7 +1,6 @@
 package org.example;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Dealership {
     String name;
@@ -10,12 +9,11 @@ public class Dealership {
 
     ArrayList<Vehicle> inventory;
 
-    public Dealership(String name, String address, String phone,
-                      ArrayList<Vehicle> inventory) {
+    public Dealership(String name, String address, String phone) {
         this.name = name;
         this.address = address;
         this.phone = phone;
-        this.inventory = inventory;
+        this.inventory = new ArrayList<>();
     }
 
     public String getName() {
@@ -42,9 +40,11 @@ public class Dealership {
         this.phone = phone;
     }
 
+    //method to return list of vehicles wihtin price range
     public ArrayList<Vehicle> getVehiclesByPrice(double min, double max) {
         ArrayList<Vehicle> matches = new ArrayList<>();
 
+        //loops through inventory & check if vehicle price is in range
         for(Vehicle vehicle : inventory) {
             if(vehicle.getPrice() >= min && vehicle.getPrice() <= max) {
                 matches.add(vehicle);

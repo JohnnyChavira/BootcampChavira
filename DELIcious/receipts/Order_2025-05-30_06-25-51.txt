@@ -1,0 +1,24 @@
+======= ORDER SUMMARY =======
+Order Time: 2025-05-30T06:25:51.955599100
+
+Sandwich #1:
+FOUR_INCH WHITE(Not Toasted)
+Toppings:
+- MEAT x1
+- MAYO x1
+Sauces:
+
+
+Sandwich #2:
+EIGHT_INCH WHEAT (Toasted)
+Toppings:
+- MEAT x1
+- TOMATO x2
+Sauces:
+
+
+Drinks:
+Drink #1: LARGE Pepsi drink ($3.00)
+Chips
+
+Total Price: $15.50

@@ -1,0 +1,18 @@
+======= ORDER SUMMARY =======
+Order Time: 2025-05-30T03:20:08.975542600
+
+Sandwich #1:
+FOUR_INCH WHITE (Toasted)
+Toppings:
+- MEAT x1
+- CHEESE x1
+- REGULAR x1
+Sauces:
+
+
+Drinks:
+Drink #1: SMALL Fanta drink ($2.00)
+Chips
+Chips #1: 1x DORITOS chips ($1.50)
+
+Total Price: $9.00

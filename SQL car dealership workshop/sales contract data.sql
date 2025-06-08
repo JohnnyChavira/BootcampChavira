@@ -1,0 +1,1 @@
+SELECT * FROM cardealership.sales_contract;
